@@ -6,6 +6,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <form action="{{ route('update') }}" method="POST" class="p-10 bg-white rounded-lg shadow-xl">
             @csrf
+            @method('put')
             <div>
                 <label class="block text-sm text-gray-600" for="skor">Skor</label>
                 <input type="hidden" name="id" value="{{ $skor['id'] }}">

@@ -8,7 +8,6 @@
     <div class="w-full shadow-lg">
         <div class="bg-white overflow-auto">
             <table class="text-left w-full border-collapse">
-                <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
                 <thead class="bg-sidebar text-white text-center">
                     <tr>
                         <th
@@ -28,10 +27,13 @@
                         <td class="py-4 px-6 border-b border-grey-light">
                             <a href="{{ route('edit-skor',[$skor['id']] ) }}"
                                 class="px-4 py-2 bg-yellow-400 hover:bg-yellow-500 rounded-md">Edit</a>
-                            <form class="inline" action="{{ route('delete-skor') }}" method="POST">
+                            <form onsubmit="return confirm('Yakin ?')" class="inline"
+                                action="{{ route('delete-skor') }}" method="POST">
                                 @csrf
+                                @method('delete')
                                 <input type="hidden" name="id" value="{{ $skor['id'] }}">
-                                <button class="px-2.5 py-1.5 bg-red-500 hover:bg-red-600 rounded-md text-white"
+                                <button id="delete"
+                                    class="px-2.5 py-1.5 bg-red-500 hover:bg-red-600 rounded-md text-white"
                                     type="submit">
                                     Delete
                                 </button>
@@ -47,6 +49,4 @@
             {{$skors->links()}}
         </div>
     </div>
-
-
 </x-app-layout>
