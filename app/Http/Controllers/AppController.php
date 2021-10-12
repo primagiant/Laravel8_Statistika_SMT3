@@ -9,7 +9,7 @@ class AppController extends Controller
 {
     public function index()
     {
-        $skors = Skors::paginate(5);
+        $skors = Skors::paginate(6);
         return view('all', [
             'skors' => $skors
         ]);
@@ -32,6 +32,9 @@ class AppController extends Controller
 
     public function dataBergolong()
     {
+        $min = Skors::min();
+        $max = Skors::max();
+        $avg = Skors::avg();
         $jmlData = Skors::all()->count();
         $jangkauan = Skors::jangkauan();
         $jmlKelas = Skors::jmlKelas();
@@ -39,6 +42,9 @@ class AppController extends Controller
 
         $skor = Skors::getDataBergolong();
         return view('bergolong', [
+            'min' => $min,
+            'max' => $max,
+            'avg' => $avg,
             'jmlData' => $jmlData,
             'jangkauan' => $jangkauan,
             'jmlKelas' => $jmlKelas,
