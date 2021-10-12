@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{config('app.name')}}</title>
     <meta name="author" content="Prima Giant">
     <meta name="description" content="">
+    <title>{{config('app.name')}}</title>
+    <link rel="shortcut icon" type="image/jpg" href="{{ asset('favicon.ico') }}" />
 
     <!-- Tailwind -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
