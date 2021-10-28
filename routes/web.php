@@ -12,5 +12,20 @@ Route::put('/update', [AppController::class, 'update'])->name('update');
 
 Route::delete('/delete', [AppController::class, 'destroy'])->name('delete-skor');
 
-Route::get('tabel-frekuensi', [AppController::class, 'tabelFrekuensi'])->name('tabel-frekuensi');
-Route::get('data-bergolong', [AppController::class, 'dataBergolong'])->name('data-bergolong');
+Route::get('tabel-frekuensi', [AppController::class, 'tabelFrekuensi'])
+    ->name('tabel-frekuensi');
+
+Route::get('data-bergolong', [AppController::class, 'dataBergolong'])
+    ->name('data-bergolong');
+
+Route::get('chi-kuadrat', [AppController::class, 'chiKuadrat'])
+    ->name('chi-kuadrat');
+
+Route::get('lilliefors', [AppController::class, 'lilliefors'])
+    ->name('lilliefors');
+
+Route::get('export-skor', [AppController::class, 'skorExport'])
+    ->name('export-skor');
+
+Route::post('import-skor', [AppController::class, 'skorImport'])
+    ->name('import-skor');

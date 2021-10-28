@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\SkorsExport;
+use App\Imports\SkorsImport;
 use Illuminate\Http\Request;
 use App\Models\Skors;
 
@@ -85,5 +88,47 @@ class AppController extends Controller
         $skor = Skors::find($req->id);
         $skor->delete();
         return back();
+    }
+
+    public function chiKuadrat()
+    {
+        $jmlData = Skors::all()->count();
+        $skor = Skors::getDataBergolong();
+        $avg = Skors::avg();
+        $sd = Skors::standarDeviasi();
+        return view('chikuadrat', [
+            'skor' => $skor,
+            'avg' => $avg,
+            'sd' => $sd,
+            'jmlData' => $jmlData,
+        ]);
+    }
+
+    public function lilliefors()
+    {
+        $jmlData = Skors::all()->count();
+        $skor = Skors::getFreqTable();
+        $avg = Skors::avg();
+        $sd = Skors::standarDeviasi();
+        return view('lilliefors', [
+            'skor' => $skor,
+            'avg' => $avg,
+            'sd' => $sd,
+            'jmlData' => $jmlData,
+        ]);
+    }
+
+    public function skorExport()
+    {
+        return Excel::download(new SkorsExport, 'skor.xlsx');
+    }
+
+    public function skorImport(Request $request)
+    {
+        $file = $request->file('file');
+        $namaFile = $file->getClientOriginalName();
+        $file->move('DataSkor', $namaFile);
+        Excel::import(new SkorsImport, public_path('DataSkor/' . $namaFile));
+        return redirect('/');
     }
 }

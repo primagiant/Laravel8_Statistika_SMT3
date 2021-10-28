@@ -24,5 +24,15 @@
             <i class="fas fa-table mr-3"></i>
             Data Bergolong
         </a>
+        <a href="{{ route('chi-kuadrat') }}"
+            class="{{Route::is('chi-kuadrat') ? 'flex items-center active-nav-link text-white py-4 pl-6 nav-item' : 'flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item' }}">
+            <i class="fas fa-robot mr-3"></i>
+            Chi Kuadrat
+        </a>
+        <a href="{{ route('lilliefors') }}"
+            class="{{Route::is('lilliefors') ? 'flex items-center active-nav-link text-white py-4 pl-6 nav-item' : 'flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item' }}">
+            <i class="fas fa-robot mr-3"></i>
+            Lilliefors
+        </a>
     </nav>
 </aside>

@@ -14,36 +14,31 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
-        .font-family-karla {
-            font-family: karla;
-        }
-
         .bg-sidebar {
-            background: #3d68ff;
+            /* background: #3d68ff; */
+            background: #091353;
         }
 
         .cta-btn {
-            color: #3d68ff;
-        }
-
-        .upgrade-btn {
-            background: #1947ee;
-        }
-
-        .upgrade-btn:hover {
-            background: #0038fd;
+            /* color: #3d68ff; */
+            color: #091353;
         }
 
         .active-nav-link {
-            background: #1947ee;
+            /* background: #1947ee; */
+            background: #D5D5D5;
+            color: #091353;
         }
 
         .nav-item:hover {
-            background: #1947ee;
+            /* background: #1947ee; */
+            background: #c0c0c0;
+            color: #091353;
         }
 
         .account-link:hover {
-            background: #3d68ff;
+            /* background: #3d68ff; */
+            background: #091353;
         }
     </style>
 </head>

@@ -30,6 +30,7 @@ class Skors extends Model
     {
         $skor = DB::table('skors')
             ->avg('skor');
+        $skor = round($skor, 2);
         return $skor;
     }
 
@@ -101,6 +102,21 @@ class Skors extends Model
                     ->count(),
             ]);
         }
+        return $res;
+    }
+
+    public static function standarDeviasi()
+    {
+        $allData = ModelsSkors::all();
+        $sumData = $allData->sum('skor');
+        $jmlData = $allData->count();
+        $kuadratData = collect();
+        foreach ($allData as $a) {
+            $kuadratData->push($a->skor * $a->skor);
+        }
+        $sumKuadratData = $kuadratData->sum();
+
+        $res = sqrt(($sumKuadratData - (($sumData * $sumData) / $jmlData)) / ($jmlData - 1));
         return $res;
     }
 }

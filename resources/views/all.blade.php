@@ -6,6 +6,15 @@
 
 
     <div class="w-full shadow-lg">
+        <div class="mb-3 text-white">
+            <a href="{{ route('export-skor') }}" class="bg-green-600 hover:bg-green-700 px-4 py-2 shadow rounded">
+                Export Excel
+            </a>
+            <button type="button" id="openModal"
+                class="ml-1.5 bg-yellow-600 hover:bg-yellow-700 px-4 py-2 shadow rounded">
+                Import Excel
+            </button>
+        </div>
         <div class="bg-white overflow-auto">
             <table class="text-left w-full border-collapse">
                 <thead class="bg-sidebar text-white text-center">
@@ -49,4 +58,41 @@
             {{$skors->links()}}
         </div>
     </div>
+
+    <div id="modal" class="hidden fixed bg-blue-50 top-0 bottom-0 left-0 right-0 z-20 bg-opacity-80">
+        <div class="flex justify-center items-center h-full">
+            <div class="bg-gray-50 flex flex-col justify-between items-center h-64 w-96 shadow-lg border">
+                <p class="text-xl mt-6 font-bold uppercase">Import Excel File</p>
+                <form action="{{ route('import-skor') }}" method="POST" enctype="multipart/form-data" class="mt-6">
+                    @csrf
+                    <input type="file" name="file" required>
+                    <div class="mt-5">
+                        <button type="submit"
+                            class="bg-yellow-600 hover:bg-yellow-700 px-4 py-2 shadow rounded text-white float-right">
+                            Import
+                        </button>
+                    </div>
+                </form>
+                <button id="closeModal" class="animate-bounce relative mb-2">
+                    <i class="fas fa-times-circle text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let open = document.getElementById('openModal');
+        let close = document.getElementById('closeModal');
+        let modal = document.getElementById('modal');
+
+        open.addEventListener('click', function() {
+            modal.classList.toggle('hidden');
+        })
+
+        close.addEventListener('click', function() {
+            modal.classList.toggle('hidden');
+        })
+
+
+    </script>
 </x-app-layout>
