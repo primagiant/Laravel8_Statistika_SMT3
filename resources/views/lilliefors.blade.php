@@ -1,7 +1,7 @@
 @php
 use App\Helpers\Main;
 @endphp
-<x-app-layout>
+<x-app>
 
     <x-slot name="header">
         {{ __("Metode Lilliefors") }}
@@ -71,4 +71,4 @@ use App\Helpers\Main;
         </div>
     </div>
 
-</x-app-layout>
+</x-app>

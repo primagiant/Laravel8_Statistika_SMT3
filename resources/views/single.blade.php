@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app>
 
     <x-slot name="header">
         {{ __("Tabel Fekuensi") }}
@@ -61,4 +61,4 @@
         </div>
     </div>
 
-</x-app-layout>
+</x-app>

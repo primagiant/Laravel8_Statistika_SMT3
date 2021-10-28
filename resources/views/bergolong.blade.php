@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app>
 
     <x-slot name="header">
         {{ __("Tabel Data Bergolong") }}
@@ -96,6 +96,4 @@
             </div>
         </div>
     </div>
-    </div>
-
-</x-app-layout>
+</x-app>

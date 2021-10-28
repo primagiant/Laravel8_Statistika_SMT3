@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app>
 
     <x-slot name="header">
         {{ __("Edit Skor") }}
@@ -20,4 +20,4 @@
         </form>
     </div>
 
-</x-app-layout>
+</x-app>

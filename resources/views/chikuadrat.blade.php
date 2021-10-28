@@ -1,7 +1,7 @@
 @php
 use App\Helpers\Main;
 @endphp
-<x-app-layout>
+<x-app>
 
     <x-slot name="header">
         {{ __("Metode Chi Kuadrat") }}
@@ -135,4 +135,4 @@ use App\Helpers\Main;
         <div class="clear-both"></div>
     </div>
 
-</x-app-layout>
+</x-app>

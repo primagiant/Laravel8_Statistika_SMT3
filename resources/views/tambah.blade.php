@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app>
 
     <x-slot name="header">
         {{ __("Tambah Nilai") }}
@@ -18,4 +18,4 @@
         </form>
     </div>
 
-</x-app-layout>
+</x-app>

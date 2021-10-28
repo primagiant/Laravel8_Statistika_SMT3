@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app>
 
     <x-slot name="header">
         {{ __("List All Data") }}
@@ -95,4 +95,4 @@
 
 
     </script>
-</x-app-layout>
+</x-app>
