@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Prima Giant">
     <meta name="description" content="">
-    <title>{{config('app.name')}}</title>
+    <title>{{ config('app.name') }}</title>
     <link rel="shortcut icon" type="image/jpg" href="{{ asset('favicon.ico') }}" />
 
     <!-- Tailwind -->
@@ -40,27 +40,26 @@
             /* background: #3d68ff; */
             background: #091353;
         }
+
     </style>
 </head>
 
 <body class="bg-gray-100 font-family-karla flex">
 
     <!-- SideBar -->
-    <x-sidebar></x-sidebar>
+    @include('layouts.components._sidebar')
 
 
     <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
         <!-- Desktop Header -->
-        <x-dekstop-navbar></x-dekstop-navbar>
+        @include('layouts.components._navbar_desktop')
 
         <!-- Mobile Header & Nav -->
-        <x-mobile-navbar></x-mobile-navbar>
+        @include('layouts.components._navbar_mobile')
 
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
-                <h1 class="text-3xl text-black pb-6">{{ $header }}</h1>
-
-                {{ $slot }}
+                @yield('content')
             </main>
 
             <footer class="w-full bg-white text-right p-4">

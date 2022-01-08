@@ -1,9 +1,7 @@
-<x-app>
+@extends('layouts.app')
 
-    <x-slot name="header">
-        {{ __("Tabel Data Bergolong") }}
-    </x-slot>
-
+@section('content')
+    <h1 class="text-3xl text-black pb-6">Tabel Data Bergolong</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
         <div class="bg-white overflow-auto shadow-lg">
@@ -22,10 +20,10 @@
                 </thead>
                 <tbody>
                     @foreach ($skor as $s)
-                    <tr class="hover:bg-grey-lighter text-center">
-                        <td class="py-4 px-6 border-b border-grey-light">{{ $s['down'] }} - {{ $s['up'] }}</td>
-                        <td class="py-4 px-6 border-b border-grey-light">{{ $s['freq'] }}</td>
-                    </tr>
+                        <tr class="hover:bg-grey-lighter text-center">
+                            <td class="py-4 px-6 border-b border-grey-light">{{ $s['down'] }} - {{ $s['up'] }}</td>
+                            <td class="py-4 px-6 border-b border-grey-light">{{ $s['freq'] }}</td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -52,9 +50,9 @@
                         </thead>
                         <tbody>
                             <tr class="hover:bg-grey-lighter text-center">
-                                <td class="py-4 px-6 border-b border-grey-light">{{$min}}</td>
-                                <td class="py-4 px-6 border-b border-grey-light">{{$max}}</td>
-                                <td class="py-4 px-6 border-b border-grey-light">{{$avg}}</td>
+                                <td class="py-4 px-6 border-b border-grey-light">{{ $min }}</td>
+                                <td class="py-4 px-6 border-b border-grey-light">{{ $max }}</td>
+                                <td class="py-4 px-6 border-b border-grey-light">{{ $avg }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -85,10 +83,10 @@
                         </thead>
                         <tbody>
                             <tr class="hover:bg-grey-lighter text-center">
-                                <td class="py-4 px-6 border-b border-grey-light">{{$jmlData}}</td>
-                                <td class="py-4 px-6 border-b border-grey-light">{{$jangkauan}}</td>
-                                <td class="py-4 px-6 border-b border-grey-light">{{$jmlKelas}}</td>
-                                <td class="py-4 px-6 border-b border-grey-light">{{$pjgKelas}}</td>
+                                <td class="py-4 px-6 border-b border-grey-light">{{ $jmlData }}</td>
+                                <td class="py-4 px-6 border-b border-grey-light">{{ $jangkauan }}</td>
+                                <td class="py-4 px-6 border-b border-grey-light">{{ $jmlKelas }}</td>
+                                <td class="py-4 px-6 border-b border-grey-light">{{ $pjgKelas }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -96,4 +94,4 @@
             </div>
         </div>
     </div>
-</x-app>
+@endsection

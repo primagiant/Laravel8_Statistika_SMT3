@@ -1,9 +1,7 @@
-<x-app>
+@extends('layouts.app')
 
-    <x-slot name="header">
-        {{ __("Tabel Fekuensi") }}
-    </x-slot>
-
+@section('content')
+    <h1 class="text-3xl text-black pb-6">Tabel Frekuensi</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
         <div class="bg-white overflow-auto shadow-lg">
@@ -22,10 +20,10 @@
                 </thead>
                 <tbody>
                     @foreach ($skor as $item)
-                    <tr class="hover:bg-grey-lighter text-center">
-                        <td class="py-4 px-6 border-b border-grey-light">{{ $item['key'] }}</td>
-                        <td class="py-4 px-6 border-b border-grey-light">{{ $item['value'] }}</td>
-                    </tr>
+                        <tr class="hover:bg-grey-lighter text-center">
+                            <td class="py-4 px-6 border-b border-grey-light">{{ $item['key'] }}</td>
+                            <td class="py-4 px-6 border-b border-grey-light">{{ $item['value'] }}</td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -51,14 +49,13 @@
                     </thead>
                     <tbody>
                         <tr class="hover:bg-grey-lighter text-center">
-                            <td class="py-4 px-6 border-b border-grey-light">{{$min}}</td>
-                            <td class="py-4 px-6 border-b border-grey-light">{{$max}}</td>
-                            <td class="py-4 px-6 border-b border-grey-light">{{$avg}}</td>
+                            <td class="py-4 px-6 border-b border-grey-light">{{ $min }}</td>
+                            <td class="py-4 px-6 border-b border-grey-light">{{ $max }}</td>
+                            <td class="py-4 px-6 border-b border-grey-light">{{ $avg }}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
-</x-app>
+@endsection

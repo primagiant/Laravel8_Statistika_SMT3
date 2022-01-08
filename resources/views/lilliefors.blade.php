@@ -1,12 +1,10 @@
 @php
 use App\Helpers\Main;
 @endphp
-<x-app>
+@extends('layouts.app')
 
-    <x-slot name="header">
-        {{ __("Metode Lilliefors") }}
-    </x-slot>
-
+@section('content')
+    <h1 class="text-3xl text-black pb-6">Metode Lilliefors</h1>
 
     <div class="">
         <div class="bg-gray-50 overflow-auto shadow">
@@ -42,33 +40,33 @@ use App\Helpers\Main;
                 <tbody>
                     @php $fk = 0 @endphp
                     @foreach ($skor as $item)
-                    <tr class="hover:bg-grey-lighter text-center">
-                        <td class="py-4 px-6 border-b border-grey-light">{{ $item['key'] }}</td>
-                        <td class="py-4 px-6 border-b border-grey-light">
-                            @php $fk += $item['value'] @endphp
-                            {{ $fk }}
-                        </td>
-                        <td class="py-4 px-6 border-b border-grey-light">
-                            @php $zi = ($item['key'] - $avg) / $sd @endphp
-                            {{ round($zi, 3) }}
-                        </td>
-                        <td class="py-4 px-6 border-b border-grey-light">
-                            @php $fZi = Main::getZScoreProbability($zi) @endphp
-                            {{ $fZi }}
-                        </td>
-                        <td class="py-4 px-6 border-b border-grey-light">
-                            @php $sZi = $fk/$jmlData @endphp
-                            {{ $sZi }}
-                        </td>
-                        <td class="py-4 px-6 border-b border-grey-light">
-                            @php $fsZi = abs($fZi - $sZi) @endphp
-                            {{ $fsZi }}
-                        </td>
-                    </tr>
+                        <tr class="hover:bg-grey-lighter text-center">
+                            <td class="py-4 px-6 border-b border-grey-light">{{ $item['key'] }}</td>
+                            <td class="py-4 px-6 border-b border-grey-light">
+                                @php $fk += $item['value'] @endphp
+                                {{ $fk }}
+                            </td>
+                            <td class="py-4 px-6 border-b border-grey-light">
+                                @php $zi = ($item['key'] - $avg) / $sd @endphp
+                                {{ round($zi, 3) }}
+                            </td>
+                            <td class="py-4 px-6 border-b border-grey-light">
+                                @php $fZi = Main::getZScoreProbability($zi) @endphp
+                                {{ $fZi }}
+                            </td>
+                            <td class="py-4 px-6 border-b border-grey-light">
+                                @php $sZi = $fk/$jmlData @endphp
+                                {{ $sZi }}
+                            </td>
+                            <td class="py-4 px-6 border-b border-grey-light">
+                                @php $fsZi = abs($fZi - $sZi) @endphp
+                                {{ $fsZi }}
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 
-</x-app>
+@endsection
