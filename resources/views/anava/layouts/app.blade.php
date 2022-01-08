@@ -16,33 +16,33 @@
 
         .bg-sidebar {
             /* background: #3d68ff; */
-            background: #091353;
+            background: #46d089;
         }
 
         .bg-header-list {
-            background: #0e1d7e;
+            background: #30a267;
         }
 
         .cta-btn {
             /* color: #3d68ff; */
-            color: #091353;
+            color: #46d089;
         }
 
         .active-nav-link {
             /* background: #1947ee; */
-            background: #D5D5D5;
+            background: #c8ffbd;
             color: #091353;
         }
 
         .nav-item:hover {
             /* background: #1947ee; */
-            background: #c0c0c0;
+            background: #d0f8c8;
             color: #091353;
         }
 
         .account-link:hover {
             /* background: #3d68ff; */
-            background: #091353;
+            background: #46d089;
         }
 
     </style>
@@ -51,15 +51,15 @@
 <body class="bg-gray-100 font-family-karla flex">
 
     <!-- SideBar -->
-    @include('layouts.components._sidebar')
+    @include('anava.layouts.components._sidebar')
 
 
     <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
         <!-- Desktop Header -->
-        @include('layouts.components._navbar_desktop')
+        @include('anava.layouts.components._navbar_desktop')
 
         <!-- Mobile Header & Nav -->
-        @include('layouts.components._navbar_mobile')
+        @include('anava.layouts.components._navbar_mobile')
 
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">

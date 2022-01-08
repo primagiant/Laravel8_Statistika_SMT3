@@ -16,16 +16,16 @@
 
         .bg-sidebar {
             /* background: #3d68ff; */
-            background: #091353;
+            background: #ae083a;
         }
 
         .bg-header-list {
-            background: #0e1d7e;
+            background: #971a40;
         }
 
         .cta-btn {
             /* color: #3d68ff; */
-            color: #091353;
+            color: #ae083a;
         }
 
         .active-nav-link {
@@ -42,7 +42,7 @@
 
         .account-link:hover {
             /* background: #3d68ff; */
-            background: #091353;
+            background: #ae083a;
         }
 
     </style>
@@ -51,15 +51,15 @@
 <body class="bg-gray-100 font-family-karla flex">
 
     <!-- SideBar -->
-    @include('layouts.components._sidebar')
+    @include('uji_t.layouts.components._sidebar')
 
 
     <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
         <!-- Desktop Header -->
-        @include('layouts.components._navbar_desktop')
+        @include('uji_t.layouts.components._navbar_desktop')
 
         <!-- Mobile Header & Nav -->
-        @include('layouts.components._navbar_mobile')
+        @include('uji_t.layouts.components._navbar_mobile')
 
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">

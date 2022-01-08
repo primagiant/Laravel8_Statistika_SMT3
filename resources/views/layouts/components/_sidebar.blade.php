@@ -9,6 +9,7 @@
         </a>
     </div>
     <nav class="text-white text-base font-semibold pt-3">
+        <p class="text-xs py-4 pl-6 bg-header-list">Main App</p>
         <a href="{{ route('dashboard') }}"
             class="{{ Route::is('dashboard') ? 'flex items-center active-nav-link text-white py-4 pl-6 nav-item' : 'flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item' }}">
             <i class="fas fa-align-left mr-3"></i>
@@ -31,8 +32,19 @@
         </a>
         <a href="{{ route('lilliefors') }}"
             class="{{ Route::is('lilliefors') ? 'flex items-center active-nav-link text-white py-4 pl-6 nav-item' : 'flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item' }}">
-            <i class="fas fa-robot mr-3"></i>
+            <i class="fas fa-ambulance mr-3"></i>
             Lilliefors
+        </a>
+        <p class="text-xs py-4 pl-6 bg-header-list">Another App</p>
+        <a href="{{ route('uji-t') }}"
+            class="{{ Route::is('uji-t') ? 'flex items-center active-nav-link text-white py-4 pl-6 nav-item' : 'flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item' }}">
+            <i class="fas fa-robot mr-3"></i>
+            Uji T
+        </a>
+        <a href="{{ route('uji-anava') }}"
+            class="{{ Route::is('uji-anava') ? 'flex items-center active-nav-link text-white py-4 pl-6 nav-item' : 'flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item' }}">
+            <i class="fas fa-robot mr-3"></i>
+            Uji Anava
         </a>
     </nav>
 </aside>

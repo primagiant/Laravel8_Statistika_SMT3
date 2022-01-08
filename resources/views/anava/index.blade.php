@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('anava.layouts.app')
 
 @section('content')
     <h1 class="text-3xl text-black pb-6">Uji Anava</h1>
